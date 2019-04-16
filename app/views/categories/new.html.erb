@@ -1,0 +1,22 @@
+
+<div class="container-fluid">
+<%= form_for @category do |f|%>
+  <% if @category.errors.any? %>
+    <div id="error_explanation">
+      <h2>
+        <%= pluralize(@category.errors.count, "error") %> prohibited
+        Category from being saved:
+      </h2>
+      <ul>
+        <% @category.errors.full_messages.each do |msg| %>
+          <li><%= msg %></li>
+        <% end %>
+      </ul>
+    </div>
+  <% end %>
+  <%= f.label :name %><br>
+  <%= f.text_field :name, placeholder:"Enter Category Name", class: "form-control" %><br><br>
+  <%= f.submit class: "btn btn-success"%><br><br>
+  <%= link_to 'Back', 'categories_path', class: "btn btn-warning" %>
+<% end %>
+</div>

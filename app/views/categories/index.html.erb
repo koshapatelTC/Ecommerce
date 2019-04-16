@@ -1,0 +1,15 @@
+<h1>All Categories</h1>
+<table class="table table-striped">
+    <tr>
+      <th>Name</th>
+      <th>Action</th>
+    </tr>
+ 
+  <% @categories.each do |category| %>
+    <tr>
+      <td><%= category.name %></td>
+      <td><%= link_to 'Add SubCategory',new_category_subcategory_path(category),class: "btn btn-warning"%></td>
+    </tr>
+  <% end %>
+</table>
+<%= link_to 'New Category',new_category_path,class: "btn btn-warning"%>
